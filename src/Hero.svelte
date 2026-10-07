@@ -31,29 +31,29 @@ Renders a visual replica of the Immersive Template hero.
 -->
 
 <script>
-  import { globalState } from "./state.svelte.js";
+  import { globalState } from './state.svelte.js';
 
-  import Grid from "./components/Grid/Grid.svelte";
-  import GridRow from "./components/Grid/_GridRow.svelte";
-  import SectionLabel from "./components/Hero/_SectionLabel.svelte";
-  import Headline from "./components/Hero/_Headline.svelte";
-  import Timestamp from "./components/Hero/_Timestamp.svelte";
-  import Image from "./components/Image/Image.svelte";
-  import Dek from "./components/Hero/_Dek.svelte";
-  import Byline from "./components/Hero/_Byline.svelte";
-  import Counter from "./components/Counter/Counter.svelte";
+  import Grid from './components/Grid/Grid.svelte';
+  import GridRow from './components/Grid/_GridRow.svelte';
+  import SectionLabel from './components/Hero/_SectionLabel.svelte';
+  import Headline from './components/Hero/_Headline.svelte';
+  import Timestamp from './components/Hero/_Timestamp.svelte';
+  import Image from './components/Image/Image.svelte';
+  import Dek from './components/Hero/_Dek.svelte';
+  import Byline from './components/Hero/_Byline.svelte';
+  import Counter from './components/Counter/Counter.svelte';
 
   /** @type {{sectionLabel?: string; headline?: string; timestamp?: string; heroImageUrl?: string; heroImageCaption?: string; heroImageAltText?: string; dek?: string; authorName?: string; authorBioUrl?: string;}} */
   let {
-    sectionLabel = "Section label",
-    headline = "Lorem ipsum dolor sit amet consectetur adipiscing elit",
-    timestamp = "December 1, 1977",
-    heroImageUrl = "https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg",
-    heroImageCaption = "Lorem ipsum dolor",
-    heroImageAltText = "",
-    dek = "Lorem ipsum dolor sit amet consectetur adipiscing elit, fusce sociis at montes vitae tempor enim, venenatis tristique feugiat arcu dis ridiculus.",
-    authorName = "Bryan Brussee",
-    authorBioUrl = "",
+    sectionLabel = 'Section label',
+    headline = 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+    timestamp = 'December 1, 1977',
+    heroImageUrl = 'https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg',
+    heroImageCaption = 'Lorem ipsum dolor',
+    heroImageAltText = '',
+    dek = 'Lorem ipsum dolor sit amet consectetur adipiscing elit, fusce sociis at montes vitae tempor enim, venenatis tristique feugiat arcu dis ridiculus.',
+    authorName = 'Bryan Brussee',
+    authorBioUrl = '',
   } = $props();
 </script>
 
@@ -69,9 +69,9 @@ Renders a visual replica of the Immersive Template hero.
   </GridRow>
 
   {#if heroImageUrl}
-    <GridRow variant={"fullBleed"}>
+    <GridRow variant={'fullBleed'}>
       <Image
-        variant={"captionCentered"}
+        variant={'captionCentered'}
         src={heroImageUrl}
         alt={heroImageAltText}
         caption={heroImageCaption}
@@ -79,18 +79,6 @@ Renders a visual replica of the Immersive Template hero.
       />
     </GridRow>
   {/if}
-
-  <GridRow>
-    <Counter
-      count={globalState.count}
-      handleIncrement={() => {
-        globalState.count++;
-      }}
-      handleDecrement={() => {
-        globalState.count--;
-      }}
-    />
-  </GridRow>
 
   <GridRow
     additionalClasses="justify-self-center md:max-w-[535px] md:text-center lg:max-w-[712px]"
